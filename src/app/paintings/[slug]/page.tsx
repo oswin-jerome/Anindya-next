@@ -99,6 +99,8 @@ export async function generateMetadata({ params }: { params: { slug: string } },
 
   return {
     title: paint.title,
+    description: paint.description,
+
     openGraph: {
       images: [paint.painting, ...previousImages],
     },
