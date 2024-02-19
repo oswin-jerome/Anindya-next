@@ -116,7 +116,7 @@ const ContactPage = () => {
 
               <div className="flex justify-start items-center ">
                 <button disabled={processing} className="bg-transparent border border-app-primary mt-2 z-10 relative text-app-primary  px-8 py-2  active:scale-95 rounded-full disabled:opacity-50 inline-block">
-                  {processing ? "Sending..." : "Sent"}
+                  {processing ? "Sending..." : "Send"}
                 </button>
               </div>
             </div>
