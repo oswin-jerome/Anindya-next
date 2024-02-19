@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Anindya Mukherjee",
+  metadataBase: new URL("https://anindyamukherjee.in"),
   description: DESC,
   openGraph: {
     images: [arist.src],
