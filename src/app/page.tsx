@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
 import Image from "next/image";
 import Link from "next/link";
-import { Painting } from "@/utils";
+import { DESC, Painting } from "@/utils";
 
 import PaintingAutoGrid from "@/components/PaintingAutoGrid";
+import Head from "next/head";
 
 async function getData() {
   const res = await fetch(process.env.API_URL + "/featured", {
@@ -27,7 +28,6 @@ export default async function Home() {
 
   return (
     <div>
-      {" "}
       <section className=" h-[50vh] md:h-[100vh] relative mt-16 md:mt-auto">
         <Hero />
         <div className="bg-black/50 0 absolute inset-0 grid place-items-center p-3">

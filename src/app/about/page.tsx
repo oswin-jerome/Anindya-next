@@ -1,4 +1,12 @@
 import GridImage from "@/assets/grid.png";
+import { DESC } from "@/utils";
+import { Metadata } from "next";
+import Head from "next/head";
+
+export const metadata: Metadata = {
+  title: "About - Anindya Mukherjee",
+  description: DESC,
+};
 
 const AboutPage = () => {
   return (

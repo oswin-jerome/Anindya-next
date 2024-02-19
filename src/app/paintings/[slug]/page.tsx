@@ -1,4 +1,5 @@
 import { Painting } from "@/utils";
+import { Metadata, ResolvingMetadata } from "next";
 
 async function getData(slug: string) {
   console.log(slug);
@@ -84,4 +85,22 @@ export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }, parent: ResolvingMetadata): Promise<Metadata> {
+  // read route params
+  const id = params.slug;
+
+  // fetch data
+  const product = await fetch(process.env.API_URL + "/paintings/" + id).then((res) => res.json());
+  const paint: Painting = product.painting;
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: paint.title,
+    openGraph: {
+      images: [paint.painting, ...previousImages],
+    },
+  };
 }
