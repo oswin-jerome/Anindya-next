@@ -15,7 +15,7 @@ const ContactPage = () => {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setProcessing(true);
-    const response = await fetch(process.env.API_URL + "/contact", {
+    const response = await fetch("https://app.anindyamukherjee.in/api" + "/contact", {
       method: "POST",
       body: JSON.stringify(fromData),
     });
