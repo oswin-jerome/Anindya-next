@@ -1,33 +1,73 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+@import url('https://fonts.cdnfonts.com/css/goudy-old-style');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.site-font {
+  font-family: 'Futura PT', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.name {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000092;
+  z-index: 99999999;
+}
+
+.carousel__slide-focus-ring {
+  outline: none !important;
+}
+
+
+.selected {
+  scale: 1.0 !important;
+}
+
+.slide {
+  scale: 1.2;
+}
+
+@layer components {
+  .input-box {
+    @apply flex flex-col gap-1;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .input-box input,
+  .input-box textarea,
+  .input-box select {
+    @apply rounded border-slate-400;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .input-box select:disabled,
+  .input-box input:disabled {
+    @apply opacity-40 cursor-not-allowed;
+  }
+
+  .input {
+    @apply p-3 border-none text-app-primary rounded-sm outline-none shadow-none focus:ring-app-primary;
+  }
+
+  .heading-1 {
+    /* font-family: "Montserrat", sans-serif; */
+    font-family: "Goudy Old Style", serif;
+    @apply text-4xl font-bold text-app-primary;
+  }
+
+  .description {
+    /* font-family: 'Futura PT', sans-serif; */
+    @apply text-stone-500;
   }
 }
